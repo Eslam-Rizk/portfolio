@@ -30,13 +30,13 @@ export default function Contact() {
         {/* Section Title */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 relative">
-            Let's Connect
+            Let&apos;s Connect
             <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-accent-dark to-web-accent rounded-full" />
           </h2>
           <p className="text-xl text-text-gray-dark max-w-2xl mx-auto opacity-90">
-            Ready to bring your next project to life? Whether it's embedded
-            systems or web development, I'm here to help turn your ideas into
-            reality.
+            Ready to bring your next project to life? Whether it&apos;s embedded
+            systems or web development, I&apos;m here to help turn your ideas
+            into reality.
           </p>
         </div>
 

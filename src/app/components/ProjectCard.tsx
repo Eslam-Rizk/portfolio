@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface Project {
   title: string;
   description: string;
@@ -55,10 +57,12 @@ export default function ProjectCard({ project, theme }: ProjectCardProps) {
           project.image.startsWith("fab ") ? (
             <i className={project.image} style={{ color: colors.accent }} />
           ) : (
-            <img
+            <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
             />
           )
         ) : (
