@@ -52,8 +52,9 @@ export default function PortfolioClient({
     <div
       className="min-h-screen transition-all duration-300"
       style={{
-        backgroundColor: "var(--primary-dark)",
-        color: "var(--text-dark)",
+        backgroundColor:
+          theme === "light" ? "var(--primary-light)" : "var(--primary-dark)",
+        color: theme === "light" ? "var(--text-light)" : "var(--text-dark)",
       }}
     >
       <Header theme={theme} toggleTheme={toggleTheme} />

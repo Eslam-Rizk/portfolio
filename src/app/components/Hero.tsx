@@ -1,6 +1,6 @@
 "use client";
 
-export default function Hero() {
+export default function Hero(theme: string) {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -14,7 +14,9 @@ export default function Hero() {
       className="min-h-screen flex items-center relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%)",
+          theme === "light"
+            ? "linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%)"
+            : "linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%)",
       }}
     >
       {/* Background Pattern */}

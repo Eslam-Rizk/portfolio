@@ -25,6 +25,14 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
     }
   };
 
+  // Theme-based nav link styles
+  const navLinkBase =
+    "font-medium transition-all duration-300 px-4 py-2 rounded-full";
+  const navLinkLight =
+    "text-black hover:bg-accent-dark/10 hover:text-accent-dark";
+  const navLinkDark =
+    "text-white hover:bg-accent-dark/20 hover:text-accent-dark";
+
   return (
     <header
       className={`fixed top-0 w-full z-50 backdrop-blur-md transition-all duration-300 border-b ${
@@ -45,7 +53,9 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
             <li>
               <button
                 onClick={() => scrollToSection("home")}
-                className="font-medium transition-all duration-300 px-4 py-2 rounded-full hover:bg-accent-dark/10 hover:text-accent-dark"
+                className={`${navLinkBase} ${
+                  theme === "light" ? navLinkLight : navLinkDark
+                }`}
               >
                 Home
               </button>
@@ -53,7 +63,9 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
             <li>
               <button
                 onClick={() => scrollToSection("expertise")}
-                className="font-medium transition-all duration-300 px-4 py-2 rounded-full hover:bg-accent-dark/10 hover:text-accent-dark"
+                className={`${navLinkBase} ${
+                  theme === "light" ? navLinkLight : navLinkDark
+                }`}
               >
                 Expertise
               </button>
@@ -61,7 +73,9 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
             <li>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="font-medium transition-all duration-300 px-4 py-2 rounded-full hover:bg-accent-dark/10 hover:text-accent-dark"
+                className={`${navLinkBase} ${
+                  theme === "light" ? navLinkLight : navLinkDark
+                }`}
               >
                 Contact
               </button>
@@ -71,10 +85,10 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-3 rounded-full border-2 border-white/20 hover:border-accent-dark hover:scale-110 transition-all duration-300"
+            className={`p-3 rounded-full border-2 ${theme === "light" ? "border-black/20" : "border-white/20"} hover:border-accent-dark hover:scale-110 transition-all duration-300`}
           >
             {theme === "light" ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5" fill="dark" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
             ) : (

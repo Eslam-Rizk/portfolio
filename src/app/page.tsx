@@ -3,6 +3,15 @@ import path from "path";
 import matter from "gray-matter";
 import PortfolioClient from "./portfolio-client";
 import { Project } from "./portfolio-client";
+import type { Metadata } from "next";
+
+//set metadata
+export const metadata: Metadata = {
+  title: "Eslam Rizk",
+  description:
+    "Software Engineer with a passion for creating innovative solutions",
+  keywords: ["portfolio", "projects", "web", "embedded"],
+};
 
 function loadProjects(dir: string) {
   const fullDir = path.join(process.cwd(), "projects", dir);

@@ -22,7 +22,7 @@ export default function TechnicalExpertise({
   webProjects,
   embeddedProjects,
 }: TechnicalExpertiseProps) {
-  const [activeTab, setActiveTab] = useState("embedded");
+  const [activeTab, setActiveTab] = useState("web");
 
   return (
     <section id="expertise" className="py-20 relative">
@@ -37,27 +37,7 @@ export default function TechnicalExpertise({
 
         {/* Tabs Navigation */}
         <div className="flex justify-center gap-8 mb-12">
-          <button
-            onClick={() => setActiveTab("embedded")}
-            className={`group relative px-8 py-4 border-2 rounded-full font-semibold text-lg transition-all duration-500 min-w-[200px] flex items-center justify-center gap-3 overflow-hidden ${
-              activeTab === "embedded"
-                ? "border-embedded-accent bg-gradient-to-r from-embedded-accent/10 to-embedded-accent/5 text-embedded-accent transform -translate-y-1 scale-105 shadow-xl shadow-embedded-accent/30"
-                : "border-white/20 hover:border-white/40 hover:bg-white/5 hover:-translate-y-1"
-            }`}
-          >
-            {/* Shine effect */}
-            <div className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-700 group-hover:left-full" />
-
-            <svg
-              className="w-6 h-6 relative z-10"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-            </svg>
-            <span className="relative z-10">Embedded Systems</span>
-          </button>
-
+          {/*web tab*/}
           <button
             onClick={() => setActiveTab("web")}
             className={`group relative px-8 py-4 border-2 rounded-full font-semibold text-lg transition-all duration-500 min-w-[200px] flex items-center justify-center gap-3 overflow-hidden ${
@@ -81,6 +61,28 @@ export default function TechnicalExpertise({
               />
             </svg>
             <span className="relative z-10">Web Development</span>
+          </button>
+
+          {/*embedded tab*/}
+          <button
+            onClick={() => setActiveTab("embedded")}
+            className={`group relative px-8 py-4 border-2 rounded-full font-semibold text-lg transition-all duration-500 min-w-[200px] flex items-center justify-center gap-3 overflow-hidden ${
+              activeTab === "embedded"
+                ? "border-embedded-accent bg-gradient-to-r from-embedded-accent/10 to-embedded-accent/5 text-embedded-accent transform -translate-y-1 scale-105 shadow-xl shadow-embedded-accent/30"
+                : "border-white/20 hover:border-white/40 hover:bg-white/5 hover:-translate-y-1"
+            }`}
+          >
+            {/* Shine effect */}
+            <div className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-700 group-hover:left-full" />
+
+            <svg
+              className="w-6 h-6 relative z-10"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+            <span className="relative z-10">Embedded Systems</span>
           </button>
         </div>
 
