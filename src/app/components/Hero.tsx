@@ -1,6 +1,6 @@
 "use client";
 
-export default function Hero(theme: string) {
+export default function Hero({ theme }: { theme: string }) {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
