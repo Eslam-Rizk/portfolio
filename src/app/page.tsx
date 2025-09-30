@@ -26,15 +26,14 @@ export default function Page() {
     (data): data is Project =>
       typeof data.title === "string" &&
       typeof data.description === "string" &&
-      typeof data.date === "string"
+      typeof data.date === "string",
   );
   const embeddedProjects: Project[] = loadProjects("embedded").filter(
     (data): data is Project =>
       typeof data.title === "string" &&
       typeof data.description === "string" &&
-      typeof data.date === "string"
+      typeof data.date === "string",
   );
-}
 
   return (
     <PortfolioClient
