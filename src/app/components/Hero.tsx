@@ -1,10 +1,10 @@
 "use client";
 
 interface HeroProps {
-  theme: string;
+  theme?: string;
 }
 
-export default function Hero({ theme }: HeroProps) {
+export default function Hero({ theme = "dark" }: HeroProps) {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
