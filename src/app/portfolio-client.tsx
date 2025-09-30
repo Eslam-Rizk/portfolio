@@ -6,7 +6,7 @@ import TechnicalExpertise from "./components/TechnicalExpertise";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-interface Project {
+export interface Project {
   title: string;
   description: string;
   date: string;

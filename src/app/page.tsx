@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import PortfolioClient from "./portfolio-client";
+import { Project } from "./portfolio-client";
 
 function loadProjects(dir: string) {
   const fullDir = path.join(process.cwd(), "projects", dir);
@@ -21,8 +22,19 @@ function loadProjects(dir: string) {
 }
 
 export default function Page() {
-  const webProjects = loadProjects("web");
-  const embeddedProjects = loadProjects("embedded");
+  const webProjects: Project[] = loadProjects("web").filter(
+    (data): data is Project =>
+      typeof data.title === "string" &&
+      typeof data.description === "string" &&
+      typeof data.date === "string"
+  );
+  const embeddedProjects: Project[] = loadProjects("embedded").filter(
+    (data): data is Project =>
+      typeof data.title === "string" &&
+      typeof data.description === "string" &&
+      typeof data.date === "string"
+  );
+}
 
   return (
     <PortfolioClient
